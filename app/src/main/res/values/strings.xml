@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FirebaseLearningProject</string>
+
+    <string name="server_client_id"> 495255785980-in8s58obdq49p5cclkeqm2jaeellhmvc.apps.googleusercontent.com</string>
 </resources>
