@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/mainLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/emailField"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Enter your email here"
+        android:layout_margin="5dp"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/passwordField"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Enter your password here"
+        android:layout_margin="5dp"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/logInButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log in"
+        android:textColor="#fff"
+        android:background="@color/colorPrimaryDark"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? "
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/common_google_signin_btn_text_light"
+        android:textSize="16sp"/>
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign in"
+        android:textColor="#fff"
+        android:background="#913f"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/signInGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign in With GOOGLE"
+        android:textColor="#fff"
+        android:background="#1df"
+        android:layout_margin="5dp"/>
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+
+
+
+</LinearLayout>

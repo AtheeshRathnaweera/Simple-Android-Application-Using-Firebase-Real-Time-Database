@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,19 +27,25 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button save, view, viewAllUsers;
+    private Button save, view, viewAllUsers, logOutButton;
     private EditText first, last, ageIn, phoneIn;
     // private FirebaseApp mRef;
     private DatabaseReference myRef;
+
+    private FirebaseAuth myMainAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        myMainAuth = FirebaseAuth.getInstance();
+
         save = findViewById(R.id.saveData);
         view = findViewById(R.id.viewData);
         viewAllUsers = findViewById(R.id.viewAllUsers);
+        logOutButton = findViewById(R.id.logOut);
 
         first = findViewById(R.id.firstName);
         last = findViewById(R.id.lastName);
@@ -48,6 +55,23 @@ public class MainActivity extends AppCompatActivity {
         SaveButton();
         viewButton();
         viewAllUsersButton();
+        logOutButtonClick();
+
+    }
+
+    private void logOutButtonClick(){
+
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                myMainAuth.signOut();
+                finish();
+                Intent inB = new Intent(MainActivity.this, LogIn.class);
+                inB.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(inB);
+            }
+        });
 
     }
 

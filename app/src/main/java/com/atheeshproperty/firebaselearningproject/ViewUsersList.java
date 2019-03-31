@@ -51,9 +51,6 @@ public class ViewUsersList extends AppCompatActivity {
 
                 Log.e("Size"," "+objectArrayList.size());
 
-                ArrayList<UserProfileData> usersData = new ArrayList<>();
-
-
                 for(int i=0; i < objectArrayList.size(); i= i+4){
                     Log.e("Data in list"," Data "+objectArrayList.get(i));
                     String fullName = objectArrayList.get(0).toString()+" "+objectArrayList.get(3).toString();
